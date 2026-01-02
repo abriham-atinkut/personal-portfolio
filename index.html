@@ -1,0 +1,350 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <meta
+      name="description"
+      content="Abriham Atinkut — Full Stack Web Developer. Minimal, premium portfolio showcasing projects, skills, and contact."
+    />
+    <title>Abriham Atinkut | Portfolio</title>
+    <link rel="icon" type="image/icon" href="img/name-icon-512px.jpg" />
+    <!-- Theme & SEO -->
+    <meta name="theme-color" content="#0b0b0b" />
+
+    <!-- Styles -->
+    <link rel="stylesheet" href="css/bootstrap.css" />
+    <link rel="stylesheet" href="css/gpt.css" />
+    <link rel="stylesheet" href="css/style.css" />
+
+    <!-- Fallback font family set; replace with hosted font if you like -->
+    <style>
+      /* quick critical font stack */
+      :root {
+        --font-stack: "Inter", "SF Pro Text", "Poppins", system-ui,
+          -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+      }
+      body {
+        font-family: var(--font-stack);
+      }
+    </style>
+  </head>
+  <body>
+    <!-- Sticky header / navbar -->
+    <header class="site-header" id="site-header" aria-label="Main navigation">
+      <div class="container header-inner">
+        <div class="brand">
+          <!-- Edit your name here -->
+          <a href="#home" class="brand-name logo">Abriham Atinkut</a>
+        </div>
+        <div id="phone-num">(+251) 980284040</div>
+
+        <nav class="nav" id="nav">
+          <ul class="nav-list">
+            <li><a href="#home" class="nav-link">Home</a></li>
+            <li><a href="#about" class="nav-link">About</a></li>
+            <li><a href="#skills" class="nav-link">Skills</a></li>
+            <li><a href="#portfolio" class="nav-link">Portfolio</a></li>
+            <li><a href="#contact" class="nav-link">Contact</a></li>
+          </ul>
+        </nav>
+
+        <!-- Hamburger Icon -->
+        <div class="menu-toggle" id="menu-toggle">
+          <span></span>
+          <span></span>
+          <span></span>
+        </div>
+      </div>
+    </header>
+
+    <div class="mobile-menu" id="mobile-menu">
+      <a href="#home">Home</a>
+      <a href="#about">About</a>
+      <a href="#skills">Skills</a>
+      <a href="#portfolio">Portfolio</a>
+      <a href="#contact">Contact</a>
+    </div>
+
+    <!-- Overlay -->
+    <div class="overlay" id="overlay"></div>
+
+    <main>
+      <!-- HOME / HERO -->
+      <section id="home" class="section hero text-center text-md-start">
+        <div class="container hero-grid">
+          <div class="hero-left">
+            <!-- Big name (edit here) -->
+            <h1 class="hero-name">Abriham Atinkut</h1>
+            <!-- Title (edit here) -->
+            <!-- <p class="hero-title"><b>I'm</b> Full Stack Web Developer</p> -->
+            <p id="my-sub">
+              I'm, <span class="hero-subtitle" id="typed-text"></span
+              ><span class="cursor"></span>
+            </p>
+            <div class="hero-ctas">
+              <!-- Get in Touch: scrolls to contact -->
+              <a class="btn btn-primary123" href="#contact">Get in Touch</a>
+              <!-- Download Resume: edit href to your resume -->
+              <a class="btn btn-outline" href="#" id="download-resume"
+                >Download Resume</a
+              >
+            </div>
+          </div>
+
+          <div class="hero-art" aria-hidden="true">
+            <!-- Elegant subtle decorative shapes; replace with image if you prefer -->
+            <div class="blob"></div>
+            <div class="blur-circle"></div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ABOUT -->
+      <section id="about" class="section about">
+        <div class="container about-grid reveal-on-scroll">
+          <div class="about-photo">
+            <!-- Placeholder image - replace with your photo -->
+            <img src="img/about-hero.jpg" alt="Abriham Atinkut picture" />
+          </div>
+
+          <div class="about-content">
+            <h2 class="section-title">About Me</h2>
+            <!-- Edit this description -->
+            <p class="about-text">
+              I’m a Full Stack Web Developer focused on building elegant,
+              performant, and accessible digital experiences. I craft interfaces
+              with clean design, thoughtful motion, and modern frontend
+              techniques. I enjoy turning complex problems into simple,
+              beautiful solutions.
+            </p>
+
+            <p class="about-text">
+              Technologies I use include modern JavaScript, HTML, CSS, and
+              backend services. I’m passionate about performance, accessibility,
+              and design-driven development.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <!-- SKILLS -->
+      <section id="skills" class="section skills">
+        <div class="container">
+          <h2 class="section-title reveal-on-scroll">Skills</h2>
+
+          <div class="skills-grid reveal-on-scroll">
+            <!-- Add/remove skill cards here -->
+            <div class="skill-card">HTML5</div>
+            <div class="skill-card">CSS3</div>
+            <div class="skill-card">JavaScript</div>
+            <!-- <div class="skill-card">React</div> -->
+            <!-- <div class="skill-card">Node.js</div> -->
+            <!-- <div class="skill-card">SQL & Databases</div> -->
+            <!-- <div class="skill-card">TypeScript</div> -->
+            <!-- <div class="skill-card">Performance</div> -->
+          </div>
+        </div>
+      </section>
+
+      <!-- PORTFOLIO -->
+      <section id="portfolio" class="section portfolio">
+        <div class="container">
+          <h2 class="section-title reveal-on-scroll">Portfolio</h2>
+
+          <div class="projects-grid reveal-on-scroll">
+            <!-- Each .project is a sample project. Replace images, titles, descriptions and links. -->
+            <!-- Project 1 -->
+            <article class="project">
+              <img
+                src="https://placehold.co/800x600?text=Project+1"
+                alt="Project 1 thumbnail"
+              />
+              <div class="project-overlay">
+                <h3>Project Title 1</h3>
+                <p>Short description of the project and the role you played.</p>
+                <a href="#" class="project-btn">View Project</a>
+              </div>
+            </article>
+
+            <!-- Project 2 -->
+            <article class="project">
+              <img
+                src="https://placehold.co/800x600?text=Project+2"
+                alt="Project 2 thumbnail"
+              />
+              <div class="project-overlay">
+                <h3>Project Title 2</h3>
+                <p>Short description of the project and the role you played.</p>
+                <a href="#" class="project-btn">View Project</a>
+              </div>
+            </article>
+
+            <!-- Project 3 -->
+            <article class="project">
+              <img
+                src="https://placehold.co/800x600?text=Project+3"
+                alt="Project 3 thumbnail"
+              />
+              <div class="project-overlay">
+                <h3>Project Title 3</h3>
+                <p>Short description of the project and the role you played.</p>
+                <a href="#" class="project-btn">View Project</a>
+              </div>
+            </article>
+
+            <!-- Project 4 -->
+            <article class="project">
+              <img
+                src="https://placehold.co/800x600?text=Project+4"
+                alt="Project 4 thumbnail"
+              />
+              <div class="project-overlay">
+                <h3>Project Title 4</h3>
+                <p>Short description of the project and the role you played.</p>
+                <a href="#" class="project-btn">View Project</a>
+              </div>
+            </article>
+
+            <!-- Project 5 -->
+            <article class="project">
+              <img
+                src="https://placehold.co/800x600?text=Project+5"
+                alt="Project 5 thumbnail"
+              />
+              <div class="project-overlay">
+                <h3>Project Title 5</h3>
+                <p>Short description of the project and the role you played.</p>
+                <a href="#" class="project-btn">View Project</a>
+              </div>
+            </article>
+
+            <!-- Project 6 -->
+            <article class="project">
+              <img
+                src="https://placehold.co/800x600?text=Project+6"
+                alt="Project 6 thumbnail"
+              />
+              <div class="project-overlay">
+                <h3>Project Title 6</h3>
+                <p>Short description of the project and the role you played.</p>
+                <a href="#" class="project-btn">View Project</a>
+              </div>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <!-- CONTACT -->
+      <section id="contact" class="section contact">
+        <div class="container contact-grid reveal-on-scroll">
+          <div class="contact-form-wrapper">
+            <h2 class="section-title">Contact</h2>
+            <!-- Replace form action or integrate with your backend. Simple mailto fallback below. -->
+            <form
+              id="contact-form"
+              class="contact-form"
+              action="#"
+              method="post"
+              onsubmit="handleContactSubmit(event)"
+            >
+              <label>
+                <span class="sr-only">Name</span>
+                <input
+                  type="text"
+                  name="name"
+                  id="name"
+                  placeholder="Your name"
+                  required
+                />
+              </label>
+
+              <label>
+                <span class="sr-only">Email</span>
+                <input
+                  type="email"
+                  name="email"
+                  id="email"
+                  placeholder="your@email.com"
+                  required
+                />
+              </label>
+
+              <label>
+                <span class="sr-only">Message</span>
+                <textarea
+                  name="message"
+                  id="message"
+                  rows="6"
+                  placeholder="Message"
+                  required
+                ></textarea>
+              </label>
+
+              <div class="form-actions">
+                <button type="submit" class="btn btn-primary">
+                  Send Message
+                </button>
+                <button
+                  type="button"
+                  class="btn btn-outline"
+                  id="mailto-fallback"
+                >
+                  Open mail client
+                </button>
+              </div>
+              <p class="form-note">
+                Or email directly:
+                <a href="mailto:abrihamatinkut@gmail.com" id="direct-email"
+                  >abrihamatinkut@gmail.com</a
+                >
+              </p>
+            </form>
+          </div>
+
+          <aside class="contact-info">
+            <h3>Find me on</h3>
+            <div class="socials">
+              <!-- Replace href placeholders with your profiles -->
+              <a
+                href="https://www.linkedin.com/in/abriham-atinkut/"
+                class="social"
+                aria-label="LinkedIn"
+                ><img src="img/linkedin-icon-640px.png" alt="LinkedIn icon"
+              /></a>
+              <a
+                href="https://github.com/abriham-atinkut"
+                class="social"
+                aria-label="GitHub"
+                ><img src="img/github-icon-640px.png" alt="GitHub icon"
+              /></a>
+              <a
+                href="mailto:abrihamatinkut@gmail.com"
+                class="social"
+                aria-label="Email"
+                ><img src="img/email-icon-640px.jpg" alt="Email icon"
+              /></a>
+            </div>
+
+            <div class="contact-blurb">
+              <p>
+                I’m available for freelance and full-time roles. Let's create
+                something elegant together.
+              </p>
+            </div>
+          </aside>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <div class="container footer-inner">
+        <p>© <span id="year"></span> Abriham Atinkut — All rights reserved.</p>
+      </div>
+    </footer>
+
+    <!-- Scripts -->
+
+    <script src="JS/script.js" defer></script>
+  </body>
+</html>

@@ -1,0 +1,152 @@
+/* Hamburger Menu Styles */
+.menu-toggle {
+  display: none;
+  flex-direction: column;
+  cursor: pointer;
+  width: 24px;
+  height: 18px;
+  justify-content: space-between;
+}
+
+.menu-toggle span {
+  display: block;
+  height: 2px;
+  background: white;
+  border-radius: 2px;
+  transition: all 0.4s ease;
+}
+.mobile-menu {
+  display: none;
+}
+/* create four break point media queries */
+@media (max-width: 1200px) {
+  /* styles for large devices */
+}
+
+@media (max-width: 992px) {
+  /* styles for medium devices */
+  .hero-grid {
+    margin-left: 40px;
+  }
+}
+
+@media (max-width: 768px) {
+  /* styles for small devices */
+  .hero-ctas {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 12px;
+  }
+  .about-photo {
+    display: flex;
+    justify-content: center;
+    padding-bottom: 40px;
+  }
+
+
+  .header-inner {
+    padding: 10px 0;
+  }
+  .project {
+    border-radius: 14px;
+    max-height: 180px;
+    width: 80%;
+    margin: 0 auto;
+  }
+  .hero-grid {
+    margin-left: 0px;
+  }
+
+  .nav-link {
+    color: black;
+  }
+  .nav-link.active {
+    color: #000000e8;
+    background: linear-gradient(
+      90deg,
+      rgba(201, 164, 74, 0.08),
+      rgba(38, 198, 255, 0.02)
+    );
+    box-shadow: 0 6px 18px #0f0f0fd2, 0 0 12px #141414cc;
+  }
+
+  /* MENU STYLES */
+  nav ul {
+    display: none; /* hide desktop nav */
+  }
+
+  .menu-toggle {
+    display: flex; /* show hamburger */
+  }
+
+  /* DROPDOWN MENU CONTAINER */
+  .mobile-menu {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 50vh; /* half screen */
+    background: rgba(15, 15, 15, 0.97);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 1.5rem;
+    transform: translateY(-100%);
+    opacity: 0;
+    transition: all 0.5s ease;
+    z-index: 900;
+  }
+
+  /* WHEN ACTIVE */
+  .mobile-menu.active {
+    transform: translateY(0);
+    opacity: 1;
+  }
+
+  .mobile-menu a {
+    color: white;
+    text-decoration: none;
+    font-size: 1.2rem;
+  }
+
+  /* OVERLAY FOR LOWER HALF OF SCREEN */
+  .overlay {
+    position: fixed;
+    top: 50vh;
+    left: 0;
+    width: 100%;
+    height: 50vh;
+    background: rgba(0, 0, 0, 0.5);
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.5s ease;
+    z-index: 800;
+  }
+
+  .overlay.active {
+    opacity: 1;
+    pointer-events: all;
+  }
+  .menu-toggle {
+    position: relative; /* required for z-index to work */
+    z-index: 1100; /* ensures it's always on top */
+  }
+  /* ANIMATED HAMBURGER → X */
+  .menu-toggle.active span:nth-child(1) {
+    transform: rotate(45deg) translateY(7px);
+  }
+
+  .menu-toggle.active span:nth-child(2) {
+    opacity: 0;
+  }
+
+  .menu-toggle.active span:nth-child(3) {
+    transform: rotate(-45deg) translateY(-7px);
+  }
+}
+
+@media (max-width: 576px) {
+  /* styles for extra small devices */
+}
