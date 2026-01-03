@@ -94,6 +94,7 @@ body {
   gap: 16px;
   justify-content: space-between;
   padding: 14px 0;
+  /* height: 5vh; */
 }
 
 /* Brand (top-left name) */
@@ -202,6 +203,7 @@ body {
 }
 .btn:active {
   transform: translateY(1px);
+  border: none;
 }
 .btn-primary123 {
   background: linear-gradient(
@@ -535,7 +537,7 @@ body {
     grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
   }
   .brand-name {
-    font-size: 13px;
+    font-size: 17px;
   }
 }
 
