@@ -30,7 +30,7 @@ document.addEventListener("DOMContentLoaded", function () {
     mobileMenu.classList.remove("active");
     overlay.classList.remove("active");
   });
-  
+
   // Close menu and smooth scroll when clicking a link inside mobile menu
   const menuLinks = document.querySelectorAll("#mobile-menu a");
 
@@ -160,9 +160,9 @@ document.addEventListener("DOMContentLoaded", function () {
   });
 
   // Footer year
-  const elYear = document.getElementById("year");
-  if (elYear) elYear.textContent = new Date().getFullYear();
-
+  // const elYear = document.getElementById("this_year");
+  // const currentYear = new Date().getFullYear();
+  // elYear.innerText = currentYear;
   // Smoothly scroll to section on page load if hash present
   if (location.hash) {
     const target = document.querySelector(location.hash);

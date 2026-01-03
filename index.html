@@ -7,7 +7,7 @@
       name="description"
       content="Abriham Atinkut — Full Stack Web Developer. Minimal, premium portfolio showcasing projects, skills, and contact."
     />
-    <title>Abriham Atinkut | Portfolio</title>
+    <title>Abriham | Portfolio</title>
     <link
       rel="icon"
       type="image/icon"
@@ -41,7 +41,6 @@
           <!-- Edit your name here -->
           <a href="#home" class="brand-name logo">Abriham Atinkut</a>
         </div>
-       
 
         <nav class="nav" id="nav">
           <ul class="nav-list">
@@ -88,7 +87,7 @@
             </p>
             <div class="hero-ctas">
               <!-- Get in Touch: scrolls to contact -->
-              <a class="btn btn-primary123" href="#contact">Get in Touch</a>
+              <a class="btn btn-primary" href="#contact">Get in Touch</a>
               <!-- Download Resume: edit href to your resume -->
               <a class="btn btn-outline" href="#" id="download-resume"
                 >Download Resume</a
@@ -168,13 +167,14 @@
             <!-- Each .project is a sample project. Replace images, titles, descriptions and links. -->
             <!-- Project 1 -->
             <article class="project">
-              <img
-                src="./img/netfilx_react.png"
-                alt="Project 1 thumbnail"
-              />
+              <img src="./img/netfilx_react.png" alt="Project 1 thumbnail" />
               <div class="project-overlay">
                 <h3>Netfilx - Clone</h3>
-                <p>A full-stack Netflix clone built with React and Node.js, demonstrating modern frontend architecture and backend integration.</p>
+                <p>
+                  A full-stack Netflix clone built with React and Node.js,
+                  demonstrating modern frontend architecture and backend
+                  integration.
+                </p>
                 <a href="#" class="project-btn">View Project</a>
               </div>
             </article>
@@ -253,65 +253,13 @@
           <div class="contact-form-wrapper">
             <h2 class="section-title">Contact</h2>
             <!-- Replace form action or integrate with your backend. Simple mailto fallback below. -->
-            <form
-              id="contact-form"
-              class="contact-form"
-              action="#"
-              method="post"
-              onsubmit="handleContactSubmit(event)"
-            >
-              <label>
-                <span class="sr-only">Name</span>
-                <input
-                  type="text"
-                  name="name"
-                  id="name"
-                  placeholder="Your name"
-                  required
-                />
-              </label>
 
-              <label>
-                <span class="sr-only">Email</span>
-                <input
-                  type="email"
-                  name="email"
-                  id="email"
-                  placeholder="your@email.com"
-                  required
-                />
-              </label>
-
-              <label>
-                <span class="sr-only">Message</span>
-                <textarea
-                  name="message"
-                  id="message"
-                  rows="6"
-                  placeholder="Message"
-                  required
-                ></textarea>
-              </label>
-
-              <div class="form-actions">
-                <button type="submit" class="btn btn-primary">
-                  Send Message
-                </button>
-                <button
-                  type="button"
-                  class="btn btn-outline"
-                  id="mailto-fallback"
-                >
-                  Open mail client
-                </button>
-              </div>
-              <p class="form-note">
-                Or email directly:
-                <a href="mailto:abrihamatinkut@gmail.com" id="direct-email"
-                  >abrihamatinkut@gmail.com</a
-                >
-              </p>
-            </form>
+            <p class="form-note">
+              Or email directly:
+              <a href="mailto:abrihamatinkut@gmail.com" id="direct-email"
+                >abrihamatinkut@gmail.com</a
+              >
+            </p>
           </div>
 
           <aside class="contact-info">
@@ -351,11 +299,17 @@
 
     <footer class="site-footer">
       <div class="container footer-inner">
-        <p>© <span id="year"></span> Abriham Atinkut — All rights reserved.</p>
+        <p>
+          © <span id="this_year"></span> Abriham Atinkut — All rights reserved.
+        </p>
       </div>
     </footer>
-
     <!-- Scripts -->
+    <script>
+      const elYear = document.getElementById("this_year");
+      const currentYear = new Date().getFullYear();
+      elYear.innerText = currentYear;
+    </script>
 
     <script src="JS/script.js" defer></script>
   </body>

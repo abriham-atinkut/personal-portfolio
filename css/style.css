@@ -27,6 +27,9 @@
   box-shadow: 0 18px 40px rgba(0, 0, 0, 0.6);
   border: 1px solid rgba(255, 255, 255, 0.03);
 }
+.project-overlay h3 {
+  color: #fdd017;
+}
 
 /* create four break point media queries */
 @media (max-width: 1200px) {
