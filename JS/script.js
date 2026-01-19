@@ -47,34 +47,57 @@ document.addEventListener("DOMContentLoaded", function () {
   const portfolio = document.getElementById("portfolio");
   const toggleBtn = document.getElementById("darkModeToggle");
 
-  if (localStorage.getItem("mode", "enable")) {
-    document.body.classList.add("dark-mode");
-    toggleBtn.innerText = "Light Mode";
-    [about, portfolio].forEach((el) =>
-      el.classList.replace("bg-light", "section-gradient-dark"),
-    );
-  } else if (localStorage.getItem("mode", "disable")) {
-    toggleBtn.innerText = "Dark Mode";
-    [about, portfolio].forEach((el) => el.classList.add("bg-light"));
+  // helper: apply a saved mode value: "enable" => dark, "disable" => light
+  function applyMode(modeValue) {
+    const isDark = modeValue === "enable";
+
+    if (isDark) {
+      document.body.classList.add("dark-mode");
+    } else {
+      document.body.classList.remove("dark-mode");
+    }
+
+    if (toggleBtn) toggleBtn.innerText = isDark ? "Light Mode" : "Dark Mode";
+
+    [about, portfolio].forEach((el) => {
+      if (!el) return;
+      if (isDark) {
+        if (el.classList.contains("bg-light")) {
+          el.classList.replace("bg-light", "section-gradient-dark");
+        } else {
+          el.classList.add("section-gradient-dark");
+        }
+      } else {
+        if (el.classList.contains("section-gradient-dark")) {
+          el.classList.replace("section-gradient-dark", "bg-light");
+        } else {
+          el.classList.add("bg-light");
+        }
+      }
+    });
   }
 
-  toggleBtn.addEventListener("click", () => {
-    document.body.classList.toggle("dark-mode");
-    if (document.body.classList.contains("dark-mode")) {
-      localStorage.setItem("mode", "disable");
-      toggleBtn.innerText = "Light Mode";
-      [about, portfolio].forEach((el) =>
-        el.classList.replace("bg-light", "section-gradient-dark"),
-      );
-    } else {
-      localStorage.setItem("mode", "enalbe");
-      toggleBtn.innerText = "Dark Mode";
-      [about, portfolio].forEach((el) =>
-        el.classList.replace("section-gradient-dark", "bg-light"),
-      );
-    }
-  });
-  // auto close when items clicked in mobile
+  // Read stored preference, fall back to OS preference, then default to light
+  const stored = localStorage.getItem("mode"); // "enable" | "disable" | null
+  if (stored === "enable" || stored === "disable") {
+    applyMode(stored);
+  } else {
+    const prefersDark =
+      window.matchMedia && window.matchMedia("(prefers-color-scheme: dark)").matches;
+    applyMode(prefersDark ? "enable" : "disable");
+  }
+
+  // Wire up toggle (safe-guard if the button isn't on the page)
+  if (toggleBtn) {
+    toggleBtn.addEventListener("click", () => {
+      const nowDark = document.body.classList.contains("dark-mode");
+      const newMode = nowDark ? "disable" : "enable"; // flip
+      localStorage.setItem("mode", newMode);
+      applyMode(newMode);
+      console.log(newMode === "enable" ? "dark mode clicked" : "light mode clicked");
+    });
+  }
+  // auto close in menu when items clicked in mobile
   document.querySelectorAll(".navbar-nav .nav-link").forEach((link) => {
     link.addEventListener("click", () => {
       const navbarCollapse = document.querySelector(".navbar-collapse");
