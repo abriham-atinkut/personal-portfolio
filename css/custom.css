@@ -152,3 +152,41 @@ body.dark-mode .skill-card {
     width: 100%; /* make sure it spans full width */
   }
 }
+
+.theme-toggle {
+  width: 42px;
+  height: 42px;
+  padding: 0;
+  transition:
+    background-color 0.3s ease,
+    transform 0.2s ease;
+}
+
+.theme-toggle i {
+  font-size: 18px;
+  transition: transform 0.4s ease;
+}
+
+.theme-toggle:hover {
+  transform: scale(1.1);
+}
+
+/* icon color in light mode */
+.theme-toggle i {
+  color: #facc15;
+}
+
+/* when dark mode is active */
+.dark .theme-toggle {
+  background-color: #1f2937;
+  border-color: #374151;
+}
+
+.dark .theme-toggle i {
+  color: #fbbe24c8;
+}
+
+/* mouse over in dark mode button */
+.theme-toggle .nav-link:hover {
+  color: #ffdd00;
+}

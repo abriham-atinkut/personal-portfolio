@@ -47,56 +47,30 @@ document.addEventListener("DOMContentLoaded", function () {
   const portfolio = document.getElementById("portfolio");
   const toggleBtn = document.getElementById("darkModeToggle");
 
-  // helper: apply a saved mode value: "enable" => dark, "disable" => light
-  function applyMode(modeValue) {
-    const isDark = modeValue === "enable";
+  const savedMode = localStorage.getItem("mode");
+  if (savedMode === "enable") {
+    document.body.classList.add("dark-mode");
+    [about, portfolio].forEach((el) =>
+      el.classList.replace("bg-light", "section-gradient-dark"),
+    );
+  } else if (savedMode === "disable") {
+    [about, portfolio].forEach((el) => el.classList.add("bg-light"));
+  }
 
-    if (isDark) {
-      document.body.classList.add("dark-mode");
+  toggleBtn.addEventListener("click", () => {
+    document.body.classList.toggle("dark-mode");
+    if (document.body.classList.contains("dark-mode")) {
+      localStorage.setItem("mode", "enable");
+      [about, portfolio].forEach((el) =>
+        el.classList.replace("bg-light", "section-gradient-dark"),
+      );
     } else {
-      document.body.classList.remove("dark-mode");
+      localStorage.setItem("mode", "disable");
+      [about, portfolio].forEach((el) =>
+        el.classList.replace("section-gradient-dark", "bg-light"),
+      );
     }
-
-    if (toggleBtn) toggleBtn.innerText = isDark ? "Light Mode" : "Dark Mode";
-
-    [about, portfolio].forEach((el) => {
-      if (!el) return;
-      if (isDark) {
-        if (el.classList.contains("bg-light")) {
-          el.classList.replace("bg-light", "section-gradient-dark");
-        } else {
-          el.classList.add("section-gradient-dark");
-        }
-      } else {
-        if (el.classList.contains("section-gradient-dark")) {
-          el.classList.replace("section-gradient-dark", "bg-light");
-        } else {
-          el.classList.add("bg-light");
-        }
-      }
-    });
-  }
-
-  // Read stored preference, fall back to OS preference, then default to light
-  const stored = localStorage.getItem("mode"); // "enable" | "disable" | null
-  if (stored === "enable" || stored === "disable") {
-    applyMode(stored);
-  } else {
-    const prefersDark =
-      window.matchMedia && window.matchMedia("(prefers-color-scheme: dark)").matches;
-    applyMode(prefersDark ? "enable" : "disable");
-  }
-
-  // Wire up toggle (safe-guard if the button isn't on the page)
-  if (toggleBtn) {
-    toggleBtn.addEventListener("click", () => {
-      const nowDark = document.body.classList.contains("dark-mode");
-      const newMode = nowDark ? "disable" : "enable"; // flip
-      localStorage.setItem("mode", newMode);
-      applyMode(newMode);
-      console.log(newMode === "enable" ? "dark mode clicked" : "light mode clicked");
-    });
-  }
+  });
   // auto close in menu when items clicked in mobile
   document.querySelectorAll(".navbar-nav .nav-link").forEach((link) => {
     link.addEventListener("click", () => {
@@ -106,6 +80,17 @@ document.addEventListener("DOMContentLoaded", function () {
       });
       bsCollapse.hide();
     });
+  });
+
+  const toggle = document.getElementById("darkModeToggle");
+  const icon = toggle.querySelector("i");
+
+  toggle.addEventListener("click", () => {
+    icon.classList.toggle("fa-moon");
+    icon.classList.toggle("fa-sun");
+
+    icon.style.transform = "rotate(180deg)";
+    setTimeout(() => (icon.style.transform = "rotate(0)"), 200);
   });
 });
 
