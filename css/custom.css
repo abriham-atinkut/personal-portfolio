@@ -143,3 +143,12 @@ body.dark-mode .skill-card {
 .navbar-toggler[aria-expanded="true"] .close-icon {
   display: inline-block;
 }
+
+/* Bootstrap breakpoint for mobile/tablet */
+@media (max-width: 991px) {
+  .navbar-nav {
+    justify-content: center; /* center items horizontally */
+    text-align: center; /* center text inside links */
+    width: 100%; /* make sure it spans full width */
+  }
+}
