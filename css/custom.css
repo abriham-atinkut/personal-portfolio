@@ -190,3 +190,9 @@ body.dark-mode .skill-card {
 .theme-toggle .nav-link:hover {
   color: #ffdd00;
 }
+
+.project-img {
+  width: 100%; 
+  max-width: 500px; 
+  height: auto;
+}
